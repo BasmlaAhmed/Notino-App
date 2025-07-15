@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div id="all">
+        <p id="notino">Notino</p>
+        <p id="reset">Reset your Password</p>
+        <form action="">
+            <input type="password" name="newPassword" id="newPassword" placeholder="Enter your a new password">
+
+        </form>
+        <button onclick="resetPassword()">Reset</button>
+        <p id="errorMsg"></p>
+    </div>
+
+    <script>
+        supabase = supabase.creatClient(
+            "https://llqyvfjtabfdcblwnuqi.supabase.co",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxscXl2Zmp0YWJmZGNibHdudXFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1NTE0NTksImV4cCI6MjA2NzEyNzQ1OX0.gD9O-jjYuaxX9uWSeHmOfmsOnE8b9KJVxLW44lqNXQo"
+        );
+
+        async function resetPassword() {
+            const newPassword = document.getElementById('newPassword').value;
+            const token = window.location.hash;
+
+            if (!token.includes('access_token')) {
+                document.getElementById('errorMsg').textContent = "Invalid or missing reset token";
+                return;
+            }
+
+            const { error } = await supabase.auth.updateUser({
+                password: newPassword
+            });
+
+            if (error) {
+                document.getElementById('errorMsg').textContent = error.message;
+            } else {
+                document.getElementById('errorMsg').textContent =
+                    'Password has been updated. You can now log in.';
+            }
+
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
