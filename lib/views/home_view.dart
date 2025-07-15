@@ -115,7 +115,7 @@ class _HomeViewState extends State<HomeView> {
                                           children: [
                                             Container(
                                               width: 100.w,
-                                              height: 50.h,
+                                              height: 40.h,
                                               decoration: BoxDecoration(
                                                 color: Colors.grey,
                                                 borderRadius:
@@ -142,7 +142,7 @@ class _HomeViewState extends State<HomeView> {
                                             SizedBox(width: 5.w,),
                                             Container(
                                               width: 100.w,
-                                              height: 50.h,
+                                              height: 40.h,
                                               decoration: BoxDecoration(
                                                 color:
                                                     Theme.of(

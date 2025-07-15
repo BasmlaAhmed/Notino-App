@@ -156,7 +156,7 @@ class _EditNoteState extends State<EditNote> {
                               children: [
                                 Container(
                                   width: 100.w,
-                                  height: 50.h,
+                                  height: 40.h,
                                   decoration: BoxDecoration(
                                     color: Theme.of(context).colorScheme.error,
                                     borderRadius: BorderRadius.circular(10),
@@ -180,7 +180,7 @@ class _EditNoteState extends State<EditNote> {
                                 SizedBox(width: 5.w,),
                                 Container(
                                   width: 100.w,
-                                  height: 50.h,
+                                  height: 40.h,
                                   decoration: BoxDecoration(
                                     color: const Color.fromARGB(
                                       255,
