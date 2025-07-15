@@ -103,65 +103,73 @@ class _HomeViewState extends State<HomeView> {
                                             Theme.of(
                                               context,
                                             ).colorScheme.secondary,
-                                        size: 40,
+                                        size: 40.w,
                                       ),
                                       content: Text(
                                         "delete".tr(),
                                         style: TextStyle(fontSize: 18.sp),
                                       ),
                                       actions: [
-                                        Container(
-                                          width: 120,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                            color: Colors.grey,
-                                            borderRadius: BorderRadius.circular(
-                                              10,
+                                        Wrap(
+                                        
+                                          children: [
+                                            Container(
+                                              width: 100.w,
+                                              height: 50.h,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(
+                                                    context,
+                                                  ).pop(false);
+                                                },
+                                                child: Text(
+                                                  "no".tr(),
+                                                  style: TextStyle(
+                                                    fontSize: 18.sp,
+                                                    color:
+                                                        Theme.of(
+                                                          context,
+                                                        ).colorScheme.onError,
+                                                  ),
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop(false);
-                                            },
-                                            child: Text(
-                                              "no".tr(),
-                                              style: TextStyle(
-                                                fontSize: 18.sp,
+                                            SizedBox(width: 5.w,),
+                                            Container(
+                                              width: 100.w,
+                                              height: 50.h,
+                                              decoration: BoxDecoration(
                                                 color:
                                                     Theme.of(
                                                       context,
-                                                    ).colorScheme.onError,
+                                                    ).colorScheme.error,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(
+                                                    context,
+                                                  ).pop(true);
+                                                },
+                                                child: Text(
+                                                  "yes".tr(),
+                                                  style: TextStyle(
+                                                    fontSize: 18.sp,
+                                                    color:
+                                                        Theme.of(
+                                                          context,
+                                                        ).colorScheme.onError,
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 120,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                            color:
-                                                Theme.of(
-                                                  context,
-                                                ).colorScheme.error,
-                                            borderRadius: BorderRadius.circular(
-                                              10,
-                                            ),
-                                          ),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop(true);
-                                            },
-                                            child: Text(
-                                              "yes".tr(),
-                                              style: TextStyle(
-                                                fontSize: 18.sp,
-                                                color:
-                                                    Theme.of(
-                                                      context,
-                                                    ).colorScheme.onError,
-                                              ),
-                                            ),
-                                          ),
+                                          ],
                                         ),
                                       ],
                                       elevation: 20,
